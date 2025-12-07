@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <header class="flex justify-between">
+    <header class="flex justify-between shadow-[0_4px_10px_rgba(0,0,0,0.05)]">
         <div class="flex gap-4 p-8">
             <img src="/logo.svg" alt="Logo" />
             <div class="flex-col">

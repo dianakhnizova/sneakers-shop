@@ -1,24 +1,22 @@
 <script setup lang="ts">
 interface Props {
-    imgUrl: string
+    imageUrl: string
     title: string;
     price: number;
-    isAdded: boolean;
-    isFavorite: boolean;
+    isAdded?: boolean;
+    isFavorite?: boolean;
     onClickAdd: ()=> void;
     onClickFavorite: ()=> void
 }
 
 const props = defineProps<Props>();
-
-
 </script>
 
 <template>
-    <div class="flex-col w-[210px] rounded-3xl border border-grey shadow-sm p-4 cursor-pointer transition hover:shadow-xl">
+    <div class="flex-col rounded-3xl border border-grey shadow-sm p-4 cursor-pointer transition hover:shadow-xl">
         <img :src="isFavorite ? '/like.svg' : '/like-dis.svg'" alt="Like" @click="onClickFavorite">
 
-        <img :src="imgUrl" alt="sneakers">
+        <img :src="imageUrl" alt="Sneakers">
         <p>{{title}}</p>
 
         <div class="flex gap-[8px] justify-between items-center">
@@ -27,5 +25,3 @@ const props = defineProps<Props>();
         </div>
     </div>
 </template>
-
-<style scoped></style>
