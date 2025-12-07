@@ -1,12 +1,13 @@
 <script setup>
-import { ref } from 'vue';
-import Card from './components/Card.vue';
-
-const isAdded = ref(true)
+import Header from './components/Header.vue';
+import Items from './components/Items.vue';
 </script>
 
 <template>
-    <Card title="Puma" price="1200$" :isAdded="isAdded" />
+    <main class="bg-white w-4/5 shadow-md m-auto h-screen rounded-xl mt-10">
+        <Header />
+        <Items />
+    </main>
 </template>
 
 <style scoped></style>

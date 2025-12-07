@@ -1,33 +1,31 @@
 <script setup lang="ts">
 interface Props {
+    imgUrl: string
     title: string;
-    price: string;
-    isAdded: boolean
+    price: number;
+    isAdded: boolean;
+    isFavorite: boolean;
+    onClickAdd: ()=> void;
+    onClickFavorite: ()=> void
 }
 
-const props = defineProps<Props>()
-console.log(props)
+const props = defineProps<Props>();
+
+
 </script>
 
 <template>
-    <div class="card">
-        <p class="title">{{ props.title }}</p>
-        <p class="title">{{ props.price }}</p>
-        <p class="title">{{ props.isAdded }}</p>
+    <div class="flex-col w-[210px] rounded-3xl border border-grey shadow-sm p-4 cursor-pointer transition hover:shadow-xl">
+        <img :src="isFavorite ? '/like.svg' : '/like-dis.svg'" alt="Like" @click="onClickFavorite">
+
+        <img :src="imgUrl" alt="sneakers">
+        <p>{{title}}</p>
+
+        <div class="flex gap-[8px] justify-between items-center">
+            <p class="font-bold">{{price}}</p>
+            <img :src="isAdded ? '/added.svg' : '/add.svg'" alt="Add" @click="onClickAdd">
+        </div>
     </div>
 </template>
 
-<style scoped>
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    border: 1px solid black;
-}
-
-.title {
-    font-size: 12px;
-}
-</style>
+<style scoped></style>
