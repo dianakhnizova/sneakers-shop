@@ -23,6 +23,8 @@ console.log(props)
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 50%;
+    border: 1px solid black;
 }
 
 .title {
