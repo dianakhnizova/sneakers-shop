@@ -2,7 +2,7 @@
 import Button from '../../components/Button.vue';
 
 const toSneakers = () => {
-    
+    console.log('saklsj')
 }
 </script>
 
